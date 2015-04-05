@@ -43,7 +43,7 @@ OBJS = $(BUILDDIR)omsg.o \
 	$(BUILDDIR)odecor.o \
 	$(BUILDDIR)oinput.o \
 	$(BUILDDIR)ovideo.o \
-	$(BUILDDIR)omap.o \
+	$(BUILDDIR)okbd.o \
 	$(BUILDDIR)keymap.o
 
 # define the C object files 
@@ -57,7 +57,7 @@ OBJS = $(BUILDDIR)omsg.o \
 all:	$(BUILDDIR)$(PROGNAME)
 
 $(BUILDDIR)$(PROGNAME): $(OBJS)
-	$(LD) $(LFLAGS) $(LIBS) -o $(BUILDDIR)$(PROGNAME) $(OBJS)
+	$(LD) $(LFLAGS) -o $(BUILDDIR)$(PROGNAME) $(OBJS) $(LIBS)
 
 install: $(BUILDDIR)$(PROGNAME)
 	install $(BUILDDIR)$(PROGNAME) $(DESTDIR)$(PROGPATH)
